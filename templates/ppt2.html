@@ -1,0 +1,133 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- AMCHART----SMITHStyles -->
+<!--<style>
+#chartdiv {
+  width: 100%;
+  height:500px;
+max-width:100%
+}
+</style>-->
+
+<!-- Resources -->
+<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/radar.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<!--
+<meta name="viewport" content="width=device-width, initial-scale=1">
+-->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: "Lato", sans-serif;}
+.mySlides {display: none}
+.ptt {
+  text-align: center;
+}
+.frame {
+  border-color: black;
+  display: block;
+  /* flex: content; */
+  width: 100%;
+  height: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  /* width="1500px" height="1100px" frameborder="0"scrolling="no" */
+}
+.gif {
+  position: absolute;
+  top: 50px;
+  right: 200px;
+  width: 700px;
+}
+</style>
+
+</head>
+<body style="margin: 0px; background-color: black;">
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="/" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+    <!-- <a href="/ppt" class="w3-bar-item w3-button w3-padding-large">PPT</a> -->
+    <!--<a href="#MEMBERS" class="w3-bar-item w3-button w3-padding-large w3-hide-small">PROJECT MEMBERS</a>-->
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-padding-large w3-button" title="More">ANALYSIS <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="/ppt1" class="w3-bar-item w3-button">Match result prediction</a>
+        <a href="/ppt2" class="w3-bar-item w3-button">Player salary assessment</a>
+      </div>
+    </div>
+    <a href="/chart" class="w3-bar-item w3-button w3-padding-large w3-hide-small">TOOL</a>
+    <button class="w3-bar-item w3-button w3-padding-large w3-hide-small" >GIF</button>
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-padding-large w3-button" title="More">3D Chart <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="#" class="w3-bar-item w3-button" onclick="document.getElementById('ticketModal1').style.display='block'">ClassPCA</a>
+        <a href="#" class="w3-bar-item w3-button" onclick="document.getElementById('ticketModal2').style.display='block'">ClusterPCA</a>
+      </div>
+    </div>
+      <!-- <button class="w3-bar-item w3-button w3-padding-large w3-hide-small" onclick="document.getElementById('ticketModal1').style.display='block'">3D1</button>
+      <button class="w3-bar-item w3-button w3-padding-large w3-hide-small" onclick="document.getElementById('ticketModal2').style.display='block'">3D2</button> -->
+      <!-- <a href="#" class="w3-bar-item w3-button" onclick="document.getElementById('ticketModal1').style.display='block'">3D1</button>
+      <a href="#" class="w3-bar-item w3-button" onclick="document.getElementById('ticketModal2').style.display='block'">3D2</button> -->
+    <a href="/link" class="w3-bar-item w3-button w3-padding-large w3-hide-small">LINK</a>
+    <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+  </div>
+</div>
+
+<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+<!--
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+  <a href="#NBA" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">NBA</a>
+  <a href="#tour" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">TOUR</a>
+  <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MERCH</a>
+</div>
+-->
+<div class="ppt">
+  <iframe class="frame" src="https://onedrive.live.com/embed?cid=F0A98057D9ECBAD1&resid=F0A98057D9ECBAD1%2117670&authkey=AAOjssowl6HwAvc&em=2" frameborder="0" scrolling="no"></iframe>
+</div>
+<div>
+  <div id="ticketModal1" class="w3-modal" onclick="document.getElementById('ticketModal1').style.display='none'" >
+    <video class="gif" loop controls><source src="/ClassPCA.mp4"></video>
+  </div>
+  <div id="ticketModal2" class="w3-modal" onclick="document.getElementById('ticketModal2').style.display='none'" >
+    <video class="gif" loop controls><source src="/ClusterPCA.mp4"></video>
+  </div>
+</div>
+  
+<!-- <div id="ticketModal2" class="w3-modal">
+  <video class="gif" controls><source src="/ClusterPCA.mp4"></video>
+</div> -->
+  <!-- <div class="w3-modal-content w3-animate-top w3-card-4">
+    <header class="w3-container w3-teal w3-center w3-padding-32"> 
+      <span onclick="document.getElementById('ticketModal1').style.display='none'" 
+     class="w3-button w3-teal w3-xlarge w3-display-topright">&times;</span>
+      <h2 class="w3-wide"><i class="fa fa-suitcase w3-margin-right"></i>Tickets</h2>
+    </header>
+    <form action="/threeRain" class="w3-container">
+      <p><label><i class="fa fa-shopping-cart"></i> Tickets, $15 per person</label></p>
+      <input class="w3-input w3-border" type="text" placeholder="How many?">
+      <p><label><i class="fa fa-user"></i> Send To</label></p>
+      <input class="w3-input w3-border" type="text" placeholder="Enter email">
+      <button class="w3-button w3-block w3-teal w3-padding-16 w3-section w3-right">PAY <i class="fa fa-check"></i></button>
+      <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal1').style.display='none'">Close <i class="fa fa-remove"></i></button> -->
+      <!--p class="w3-right">Need <a href="#" class="w3-text-blue">help?</a></p-->
+    <!-- </form>
+  </div> -->
+
+<script>
+  // When the user clicks anywhere outside of the modal, close it
+</script>
+
+</body>
+</html>

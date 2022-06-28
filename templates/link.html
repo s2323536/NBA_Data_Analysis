@@ -1,0 +1,350 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- AMCHART----SMITHStyles -->
+<!--<style>
+#chartdiv {
+  width: 100%;
+  height:500px;
+max-width:100%
+}
+</style>-->
+
+<!-- Boostrap js -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+<!-- Resources -->
+<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/radar.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: "Lato", sans-serif;}
+.mySlides {display: none}
+.container {
+  width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.left {
+  width: 450px;
+  display: inline-block;
+}
+#summary {
+  width: 400px;
+  /* display: inline-block; */
+}
+#map {
+  display: inline-block;
+}
+.image {
+  position: relative;
+  top: 50px;
+}
+#conc {
+  font-size: larger;
+}
+@media screen and (max-width:1200px){
+  .container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.left {
+  width: 98%;
+  display:contents;
+}
+#summary {
+  width: 95%;
+  /* display: inline-block; */
+}
+#map {
+  width: 95%;
+  display: contents;
+}
+.image {
+  width: 95%;
+  position: relative;
+  top: 0px;
+}
+}
+
+</style>
+
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="/" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+    <a href="/ppt1" class="w3-bar-item w3-button w3-padding-large">ANALYSIS</a>
+    <!-- <a href="/ppt" class="w3-bar-item w3-button w3-padding-large">PPT</a> -->
+    <!--<a href="#MEMBERS" class="w3-bar-item w3-button w3-padding-large w3-hide-small">PROJECT MEMBERS</a>-->
+    <!--
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-padding-large w3-button" title="More">ANALYSIS <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="/ppt1" class="w3-bar-item w3-button">Match result prediction</a>
+        <a href="/ppt2" class="w3-bar-item w3-button">Player salary assessment</a>
+      </div>
+    </div>
+    -->
+    <a href="/chart" class="w3-bar-item w3-button w3-padding-large w3-hide-small">TOOL</a>
+    <button class="w3-bar-item w3-button w3-padding-large w3-hide-small" onclick="document.getElementById('ticketModal1').style.display='block'">GIF</button>
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-padding-large w3-button" title="More">3D Chart <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="#" class="w3-bar-item w3-button" >ClassPCA</a>
+        <a href="#" class="w3-bar-item w3-button" >ClusterPCA</a>
+      </div>
+    </div>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hide-small">LINK</a>
+    <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+  </div>
+</div>
+
+<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+  <a href="/chart" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">TOOL</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">LINK</a>
+</div>
+
+
+<!--<iframe src="https://onedrive.live.com/embed?cid=31AFE813F3FA08B8&resid=31AFE813F3FA08B8%21146&authkey=AJ1BXUokV3Dvqzk&em=2" 
+width="1500" height="700" frameborder="0" scrolling="no"></iframe>-->
+
+  <!-- The NBA Section -->
+  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:1500px" id="NBA">
+    <svg viewbox="0 0 100 15">
+      <defs>
+        <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="5%" stop-color="#222324"/>
+          <stop offset="95%" stop-color="#123752"/>
+        </linearGradient>
+        <pattern id="wave" x="0" y="0" width="120" height="20" patternUnits="userSpaceOnUse">
+          <path id="wavePath" d="M-40 9 Q-30 7 -20 9 T0 9 T20 9 T40 9 T60 9 T80 9 T100 9 T120 9 V20 H-40z" mask="url(#mask)" fill="url(#gradient)"> 
+            <animateTransform
+                attributeName="transform"
+                begin="0s"
+                dur="1.5s"
+                type="translate"
+                from="0,0"
+                to="40,0"
+                repeatCount="indefinite" />
+          </path>
+        </pattern>
+      </defs>
+      <text text-anchor="middle" x="50" y="15" font-size="10" fill="url(#wave)"  fill-opacity="0.6">NBA</text>
+      <text text-anchor="middle" x="50" y="15" font-size="10" fill="url(#gradient)" fill-opacity="0.1">NBA</text>
+    </svg>
+    <p class="w3-opacity"><i>We love NBA</i></p>
+    <div class="container">
+      <div class="left">
+        <div id="summary">
+          <!--
+          <p class="w3-justify" >The dataset was collected to work on NBA games data. 
+            <br>So what one can do with this dataset? 
+            <br>You can explore various aspects of any NBA player and can answer some of my questions😬.
+            <br>Which player has the most field goals in the year 2022?
+            <br>Which player has played most matches?
+            <br>Player with the most rebounds and assists?
+          </p>-->
+          <p class="w3-justify" id="conc" >透過NBA資料分析、機器學習建模：對球隊勝率進行預測，隊球員價值進行評估
+            <br>「特徵工程」、「維度縮減」、「分類模型」、「預測模型」是我們的武器
+            <br>我們將球賽勝率預測準確度「從60%提高到70%」
+            <br>我們從球員中，找出「薪水小偷」跟「灰姑娘」
+            <br>兩個半月的學習
+            <br>我們成為了有能力處理資料、分析資料、進行決策和預測的資料科學家
+          </p>
+        </div>
+        <div class="image">
+          <img src="/qr.png" alt="" width="250">
+        </div>
+
+      </div>
+
+      <div class="w3-row w3-padding-32" id="map">
+        <!--<img src="/w3images/bg.png" width="860" height="607" usemap="#ImageMap01">      -->
+        <img src="/bg.png" width="860" height="607" usemap="#ImageMap01">
+        <map name="ImageMap01">
+        　<area shape="circle" coords="85,113,24" href="https://www.nba.com/blazers/" target=_blank alt="Portland Trail Blazers"> <!--Portland Trail Blazers-->
+          <area shape="circle" coords="72,219,21" href="https://www.nba.com/kings/" target=_blank alt="Sacramento Kings"> <!--Sacramento Kings-->
+          <area shape="circle" coords="51,263,20" href="https://www.nba.com/warriors/" target=_blank alt="Golden State Warriors"> <!--Golden State Warriors-->
+          <area shape="circle" coords="75,316,15" href="https://www.nba.com/lakers/" target=_blank alt="Los Angeles Lakers"> <!--Los Angeles Lakers-->
+          <area shape="circle" coords="111,350,20" href="https://www.nba.com/clippers/" target=_blank alt="LA Clippers"> <!--LA Clippers-->
+          <area shape="rect" coords="179,226,226,246" href="https://www.nba.com/jazz/" target=_blank alt="Utah Jazz"> <!--Utah Jazz-->
+          <area shape="polygon" coords="172,336,160,384,196,385,208,335" href="https://www.nba.com/suns/" target=_blank alt="Phoenix Suns"> <!--Phoenix Suns-->
+          <area shape="circle" coords="438,410,24" href="https://www.mavs.com/" target=_blank alt="Dallas Mavericks"> <!--Dallas Mavericks-->
+          <area shape="circle" coords="316,261,23" href="https://www.nba.com/nuggets/" target=_blank alt="Denver Nuggets"> <!--Denver Nuggets-->
+          <area shape="rect" coords="362,448,414,467" href="https://www.nba.com/spurs/" target=_blank alt="San Antonio Spurs"> <!--San Antonio Spurs-->
+          <area shape="circle" coords="416,348,20" href="https://www.nba.com/thunder/" target=_blank alt="Oklahoma City Thunder"> <!--Oklahoma City Thunder-->
+          <area shape="circle" coords="488,449,19" href="https://www.nba.com/rockets/" target=_blank alt="Houston Rockets"> <!--Houston Rockets-->
+          <area shape="circle" coords="544,446,19" href="https://www.nba.com/pelicans/" target=_blank alt="New Orleans Pelicans"> <!--New Orleans Pelicans-->
+          <area shape="rect" coords="508,329,548,377" href="https://www.nba.com/grizzlies/" target=_blank alt="Memphis Grizzlies"> <!--Memphis Grizzlies-->
+          <area shape="circle" coords="469,160,23" href="https://www.nba.com/timberwolves/" target=_blank alt="Minnesota Timberwolves"> <!--Minnesota Timberwolves-->
+          <area shape="circle" coords="540,165,22" href="https://www.nba.com/bucks/" target=_blank alt="Milwaukee Bucks"> <!--Milwaukee Bucks-->
+          <area shape="polygon" coords="532,195,549,243,560,243,581,196" href="https://www.nba.com/bulls/" target=_blank alt="Chicago Bulls"> <!--Chicago Bulls-->
+          <area shape="circle" coords="584,259,23" href="https://www.nba.com/pacers/" target=_blank alt="Indiana Pacers"> <!--Indiana Pacers-->
+          <area shape="circle" coords="611,178,22" href="https://www.nba.com/pistons/" target=_blank alt="Detroit Pistons"> <!--Detroit Pistons-->
+          <area shape="polygon" coords="622,200,607,207,623,248,640,208" href="https://www.nba.com/cavaliers/" target=_blank alt="Cleveland Cavaliers"> <!--Cleveland Cavaliers-->
+          <area shape="polygon" coords="691,465,692,505,720,505,723,457" href="https://www.nba.com/heat/" target=_blank alt="Miami Heat"> <!--Miami Heat-->
+          <area shape="polygon" coords="683,463,699,437,674,428,649,443" href="https://www.nba.com/magic/" target=_blank alt="Orlando Magic"> <!--Orlando Magic-->
+          <area shape="circle" coords="616,357,23" href="https://www.nba.com/hawks/" target=_blank alt="Atlanta Hawks"> <!--Atlanta Hawks-->
+          <area shape="circle" coords="695,264,22" href="https://www.nba.com/wizards/" target=_blank alt="Washington Wizards"> <!--Washington Wizards-->
+          <area shape="circle" coords="736,237,22" href="https://www.nba.com/sixers/" target=_blank alt="Philadelphia 76ers"> <!--Philadelphia 76ers-->
+          <area shape="polygon" coords="668,334,645,321,668,360,693,324" href="https://www.nba.com/hornets/" target=_blank alt="Charlotte Hornets"> <!--Charlotte Hornets-->
+          <area shape="polygon" coords="731,172,708,183,731,210,753,182" href="https://www.nba.com/" target=_blank alt="New York Knicks"> <!--New York Knicks-->
+          <area shape="polygon" coords="774,193,757,197,774,236,791,198" href="https://www.nba.com/nets/" target=_blank alt="Brooklyn Nets"> <!--Brooklyn Nets-->
+          <area shape="circle" coords="777,165,22" href="https://www.nba.com/celtics/" target=_blank alt="Boston Celtics"> <!--Boston Celtics-->
+          <area shape="circle" coords="671,153,22" href="https://www.nba.com/raptors/" target=_blank alt="Toronto Raptors"> <!--Toronto Raptors-->
+        </map>
+      </div>
+      
+    </div>
+  </div>
+  <!-- The Analysis Section -->
+  
+  <!-- HTML -->
+  <!--<div id="chartdiv"></div>-->
+ 
+  <!-- Ticket Modal -->
+  <div id="ticketModal" class="w3-modal">
+    <div class="w3-modal-content w3-animate-top w3-card-4">
+      <header class="w3-container w3-teal w3-center w3-padding-32"> 
+        <span onclick="document.getElementById('ticketModal').style.display='none'" 
+       class="w3-button w3-teal w3-xlarge w3-display-topright">&times;</span>
+        <h2 class="w3-wide"><i class="fa fa-suitcase w3-margin-right"></i>Tickets</h2>
+      </header>
+      <div class="w3-container">
+        <p><label><i class="fa fa-shopping-cart"></i> Tickets, $15 per person</label></p>
+        <input class="w3-input w3-border" type="text" placeholder="How many?">
+        <p><label><i class="fa fa-user"></i> Send To</label></p>
+        <input class="w3-input w3-border" type="text" placeholder="Enter email">
+        <button class="w3-button w3-block w3-teal w3-padding-16 w3-section w3-right">PAY <i class="fa fa-check"></i></button>
+        <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal').style.display='none'">Close <i class="fa fa-remove"></i></button>
+        <p class="w3-right">Need <a href="#" class="w3-text-blue">help?</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- The Members Section -->
+  <!--
+  <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
+    <h2 class="w3-wide w3-center">PROJECTS MEMBERS</h2>
+    <div class="w3-container">-->
+      <!--<h5>Project Members</h5>-->
+      <!--
+        <div class="w3-row">
+              <div class="w3-col m2 text-center" id="MEMBERS">
+                <img class="w3-circle" src="/p_members.jpg" style="width:96px;height:96px">
+              </div>
+              <div class="w3-col m10 w3-container">
+                <h4>Austin<span class="w3-opacity w3-medium">專長:</span></h4>
+                <p>技術指導,報告製作</p><br>
+              </div>
+        </div>
+
+        <div class="w3-row">
+              <div class="w3-col m2 text-center">
+                <img class="w3-circle" src="/p_members.jpg" style="width:96px;height:96px">
+              </div>
+              <div class="w3-col m10 w3-container">
+                <h4>張志瑋<span class="w3-opacity w3-medium">專長:</span></h4>
+                <p>負責:資料清洗,數據分析</p><br>
+              </div>
+        </div>
+     
+      <div class="w3-row">
+            <div class="w3-col m2 text-center">
+              <img class="w3-circle" src="/p_members.jpg" style="width:96px;height:96px">
+            </div>
+            <div class="w3-col m10 w3-container">
+              <h4>張國榮<span class="w3-opacity w3-medium">專長:</span></h4>
+              <p>負責:數據分析</p><br>
+            </div>
+      </div>
+
+      <div class="w3-row">
+            <div class="w3-col m2 text-center">
+              <img class="w3-circle" src="/p_members.jpg" style="width:96px;height:96px">
+            </div>
+            <div class="w3-col m10 w3-container">
+              <h4>Winnie W.<span class="w3-opacity w3-medium">專長:</span></h4>
+              <p>負責:Web製作</p><br>
+            </div>
+      </div>
+ 
+      <div class="w3-row">
+            <div class="w3-col m2 text-center">
+              <img class="w3-circle" src="/p_members.jpg" style="width:96px;height:96px">
+            </div>
+            <div class="w3-col m10 w3-container">
+              <h4>Smith<span class="w3-opacity w3-medium">專長:</span></h4>
+              <p>負責:資料爬蟲,Web製作</p><br>
+            </div>
+      </div>
+      -->
+      <!--
+    </div>
+  </div>
+-->
+<!-- End Page Content -->
+</div>
+
+
+
+
+
+<script>
+// Automatic Slideshow - change image every 4 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 4000);    
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+
+// When the user clicks anywhere outside of the modal, close it
+var modal = document.getElementById('ticketModal');
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+</body>
+</html>
